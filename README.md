@@ -64,12 +64,8 @@ plot(rnorm(20), rnorm(20), col = pokepal(137), pch = 16)
 library(ggplot2)
 
 
-qplot(Sepal.Length, colour = Species, data=iris) +
+qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
   scale_colour_poke(pokemon = 318)
-```
-
-```
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
 ![plot of chunk ggplot2](figure/ggplot2-1.png) 

@@ -21,7 +21,7 @@ library(encounteR)
 Usage
 ------
 
-See palettes:
+### See palettes
 
 
 
@@ -46,6 +46,42 @@ pokedex('Metapod')
 ```
 
 ![plot of chunk pokedex](figure/pokedex-3.png) 
+
+
+### Base graphics
+
+
+```r
+plot(rnorm(20), rnorm(20), col = pokepal(137), pch = 16)
+```
+
+![plot of chunk base](figure/base-1.png) 
+
+### ggplot2
+
+```r
+# palettetown doesn't import ggplot2
+library(ggplot2)
+
+
+qplot(Sepal.Length, colour = Species, data=iris) +
+  scale_colour_poke(pokemon = 318)
+```
+
+```
+## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
+```
+
+![plot of chunk ggplot2](figure/ggplot2-1.png) 
+
+```r
+qplot(factor(carb), data=mtcars, geom="bar", 
+  fill = factor(carb)) +
+  scale_fill_poke(pokemon = 'Sunkern')
+```
+
+![plot of chunk ggplot2](figure/ggplot2-2.png) 
+
 
 
 

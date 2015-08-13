@@ -11,17 +11,56 @@ This package is very much inspired by [pokepalletes](http://pokepalettes.com/#ch
 Installation
 -------------
 
-    library(devtools)
-    install_github('timcdlucas/encounteR')
-    library(encounteR)
-
-
+```{r install, echo = TRUE, eval = FALSE}
+library(devtools)
+install_github('timcdlucas/encounteR')
+library(encounteR)
+```
 
 Usage
 ------
 
+### See palettes
 
-Base graphics:
+```{r lib, eval = TRUE, echo = FALSE}
+library(palettetown)
+```
+
+```{r pokedex, eval = TRUE, echo = TRUE}
+# Show ten of the better palettes
+pokedex()
+
+# Show ten palettes starting from pokemon #155
+pokedex(155)
+
+# Show ten palettes starting from Metapod
+pokedex('Metapod')
+
+```
+
+
+### Base graphics
+
+```{r base}
+plot(rnorm(20), rnorm(20), col = pokepal(137), pch = 16)
+```
+
+### ggplot2
+```{r ggplot2}
+# palettetown doesn't import ggplot2
+library(ggplot2)
+
+
+qplot(Sepal.Length, colour = Species, data=iris) +
+  scale_colour_poke(pokemon = 318)
+
+qplot(factor(carb), data=mtcars, geom="bar", 
+  fill = factor(carb)) +
+  scale_fill_poke(pokemon = 'Sunkern')
+
+```
+
+
 
 
 

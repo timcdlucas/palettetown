@@ -14,7 +14,7 @@ Installation
 
 ```r
 library(devtools)
-install_github('timcdlucas/encounteR')
+install_github('timcdlucas/palettetown')
 library(encounteR)
 ```
 

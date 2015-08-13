@@ -22,7 +22,7 @@ NULL
 #'plot(1:length(pal), col = pal)
 #'@export
 
-pokepal <- function(pokemon = 1){
+pokepal <- function(pokemon = 1, spread = NULL){
     
   # Fix lower case to first letter capitilised.
   if(is.character(pokemon)){
@@ -32,7 +32,14 @@ pokepal <- function(pokemon = 1){
         sep="", collapse=" ")
   }
 
-  return(cols[[pokemon]])
+  # Reorder palette if spread is numeric.
+  if(is.numeric(NULL)){
+    
+  } else {
+    pal <- pokeColours[[pokemon]]
+  }
+  
+  return(pal)
 }
 
 

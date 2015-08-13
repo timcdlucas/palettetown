@@ -23,7 +23,7 @@ pokedex <- function(pokemon = NULL){
   if(is.numeric(pokemon)){
     pokeNs <- pokemon:(pokemon + 9)
   } else if(is.character(pokemon)){
-    start <- which(names(cols) == pokemon)
+    start <- which(names(pokeColours) == pokemon)
     pokeNs <- start:(start + 9)
   }
 
@@ -49,7 +49,7 @@ pokedex <- function(pokemon = NULL){
           border="light grey")
     }
     text(rep(-0.1, 10), (10:1) - 0.6, 
-      labels = paste(pokeNs, ':', names(cols)[pokeNs]), 
+      labels = paste(pokeNs, ':', names(pokeColours)[pokeNs]), 
       xpd = TRUE, adj = 1)
 
 }

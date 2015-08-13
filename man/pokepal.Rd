@@ -4,13 +4,22 @@
 \alias{pokepal}
 \title{Get a pokemon palette.}
 \usage{
-pokepal(pokemon = 1)
+pokepal(pokemon = 1, spread = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
+
+\item{spread}{How many, quite distinct, colours should be returned. See details.}
 }
 \description{
 Get a pokemon palette by either giving a pokemon number or name.
+}
+\details{
+If \code{spread} if given an integer, the full palette is
+ clustered into that many groups (ward clustering in HSV space).
+ The most common colour in each cluster is then returned. It is
+ hoped this will give a good balance between reflecting the pokemons
+ colouring while giving relatively distinct colours.
 }
 \examples{
 pal <- pokepal(3)

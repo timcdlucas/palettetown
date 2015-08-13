@@ -37,24 +37,31 @@ pokedex()
 
 ```r
 # Show ten palettes starting from pokemon #155
-pokedex(155)
+# Get 7 fairly distinct colours for each.
+pokedex(155, 7)
 ```
 
-![plot of chunk pokedex](figure/pokedex-2.png) 
+```
+## Error in pokedex(155, 7): unused argument (7)
+```
 
 ```r
 # Show ten palettes starting from Metapod
 pokedex('Metapod')
 ```
 
-![plot of chunk pokedex](figure/pokedex-3.png) 
+![plot of chunk pokedex](figure/pokedex-2.png) 
 
 
 ### Base graphics
 
 
 ```r
-plot(rnorm(20), rnorm(20), col = pokepal(137), pch = 16)
+plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16)
+```
+
+```
+## Error in pokepal(pokemon = 137, spread = 6): unused argument (spread = 6)
 ```
 
 ![plot of chunk base](figure/base-1.png) 
@@ -75,7 +82,7 @@ qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
 ```r
 qplot(factor(carb), data=mtcars, geom="bar", 
   fill = factor(carb)) +
-  scale_fill_poke(pokemon = 'Sunkern')
+  scale_fill_poke(pokemon = 'Sunkern', spread = 6)
 ```
 
 ![plot of chunk ggplot2](figure/ggplot2-2.png) 

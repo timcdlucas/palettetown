@@ -5,7 +5,7 @@
 #' If no name or number is given, 10 of the better palettes are
 #' displayed.
 #'
-#'@param pokemon An integer or character pokemon name
+#'@inheritParams pokepal
 #'
 #'@name pokedex
 #'@examples
@@ -14,7 +14,7 @@
 #'@export
 
 
-pokedex <- function(pokemon = NULL){
+pokedex <- function(pokemon = NULL, spread = NULL){
 
   if(is.null(pokemon)){
     pokeNs <- c(6, 17, 114, 137, 156, 191, 193, 283, 311, 318)
@@ -27,7 +27,11 @@ pokedex <- function(pokemon = NULL){
     pokeNs <- start:(start + 9)
   }
 
-  nCols <- sapply(pokeNs, function(x) length(pokepal(x)))
+  if(is.null(spread)){
+    nCols <- sapply(pokeNs, function(x) length(pokepal(x)))
+  } else {
+    nCols <- rep(spread, 10)
+  }
   xlim <- max(nCols)
 
   oldpar <- par(mgp = c(2, 0.25, 0), mai=c(1.02,0.82,0.82,0.42))
@@ -45,7 +49,7 @@ pokedex <- function(pokemon = NULL){
           ybottom = 10 - i, 
           xright = 1:nCols[i], 
           ytop = 11 - i - 0.2, 
-          col = pokepal(pokeNs[i]),
+          col = pokepal(pokeNs[i], spread),
           border="light grey")
     }
     text(rep(-0.1, 10), (10:1) - 0.6, 

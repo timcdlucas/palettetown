@@ -14,16 +14,16 @@
 #'@rdname scale_colour_poke
 #'@export
 
-scale_colour_poke <- function(..., pokemon = 1){
-  scale_colour_manual(values = pokepal(pokemon))
+scale_colour_poke <- function(..., pokemon = 1, spread = NULL){
+  scale_colour_manual(values = pokepal(pokemon, spread))
 }
 
 
 #'@rdname scale_colour_poke
 #'@export
 
-scale_fill_poke <- function(..., pokemon = 1){
-  scale_fill_manual(values = pokepal(pokemon))
+scale_fill_poke <- function(..., pokemon = 1, spread = NULL){
+  scale_fill_manual(values = pokepal(pokemon, spread))
 }
 
 

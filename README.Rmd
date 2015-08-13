@@ -33,7 +33,8 @@ library(palettetown)
 pokedex()
 
 # Show ten palettes starting from pokemon #155
-pokedex(155)
+# Get 7 fairly distinct colours for each.
+pokedex(155, 7)
 
 # Show ten palettes starting from Metapod
 pokedex('Metapod')
@@ -44,7 +45,7 @@ pokedex('Metapod')
 ### Base graphics
 
 ```{r base}
-plot(rnorm(20), rnorm(20), col = pokepal(137), pch = 16)
+plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16)
 ```
 
 ### ggplot2
@@ -58,8 +59,7 @@ qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
 
 qplot(factor(carb), data=mtcars, geom="bar", 
   fill = factor(carb)) +
-  scale_fill_poke(pokemon = 'Sunkern')
-
+  scale_fill_poke(pokemon = 'Sunkern', spread = 6)
 ```
 
 

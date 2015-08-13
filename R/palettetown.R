@@ -4,7 +4,7 @@
 #'@name palettetown
 #'@author Tim CD Lucas
 #'@docType package
-#'@import ggplot2
+
 
 NULL
 

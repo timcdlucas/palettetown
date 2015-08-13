@@ -41,16 +41,14 @@ pokedex()
 pokedex(155, 7)
 ```
 
-```
-## Error in pokedex(155, 7): unused argument (7)
-```
+![plot of chunk pokedex](figure/pokedex-2.png) 
 
 ```r
 # Show ten palettes starting from Metapod
 pokedex('Metapod')
 ```
 
-![plot of chunk pokedex](figure/pokedex-2.png) 
+![plot of chunk pokedex](figure/pokedex-3.png) 
 
 
 ### Base graphics
@@ -58,10 +56,6 @@ pokedex('Metapod')
 
 ```r
 plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16)
-```
-
-```
-## Error in pokepal(pokemon = 137, spread = 6): unused argument (spread = 6)
 ```
 
 ![plot of chunk base](figure/base-1.png) 

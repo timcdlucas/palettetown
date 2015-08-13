@@ -15,7 +15,7 @@ pokepal(pokemon = 1, spread = NULL)
 Get a pokemon palette by either giving a pokemon number or name.
 }
 \details{
-If \code{spread} if given an integer, the full palette is
+If \code{spread} is given an integer, the full palette is
  clustered into that many groups (ward clustering in HSV space).
  The most common colour in each cluster is then returned. It is
  hoped this will give a good balance between reflecting the pokemons

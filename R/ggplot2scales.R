@@ -4,9 +4,14 @@
 #'
 #' Get a pokemon palette by either giving a pokemon number or name.
 #'
-#'@param pokemon An integer or character pokemon name
+#'@inheritParams pokepal
 #'
 #'@name scale_colour_poke
+#'@details If \code{spread} is given an integer, the full palette is 
+#'  clustered into that many groups (ward clustering in HSV space). 
+#'  The most common colour in each cluster is then returned. It is
+#'  hoped this will give a good balance between reflecting the pokemons
+#'  colouring while giving relatively distinct colours.
 #'@examples
 #'qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
 #'  scale_colour_poke('Metapod')
@@ -30,8 +35,8 @@ scale_fill_poke <- function(..., pokemon = 1, spread = NULL){
 #'@rdname scale_colour_poke
 #'@export
 
-scale_color_poke <- function(..., pokemon = 1){
-  scale_color_manual(values = pokepal(pokemon))
+scale_color_poke <- function(..., pokemon = 1, spread = NULL){
+  scale_color_manual(values = pokepal(pokemon, spread))
 }
 
 

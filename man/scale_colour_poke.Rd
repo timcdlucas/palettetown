@@ -6,17 +6,26 @@
 \alias{scale_fill_poke}
 \title{Add a pokemon palette to a ggplot2 colour or fill scale.}
 \usage{
-scale_colour_poke(..., pokemon = 1)
+scale_colour_poke(..., pokemon = 1, spread = NULL)
 
-scale_fill_poke(..., pokemon = 1)
+scale_fill_poke(..., pokemon = 1, spread = NULL)
 
-scale_color_poke(..., pokemon = 1)
+scale_color_poke(..., pokemon = 1, spread = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
+
+\item{spread}{How many, quite distinct, colours should be returned. See details.}
 }
 \description{
 Get a pokemon palette by either giving a pokemon number or name.
+}
+\details{
+If \code{spread} is given an integer, the full palette is
+ clustered into that many groups (ward clustering in HSV space).
+ The most common colour in each cluster is then returned. It is
+ hoped this will give a good balance between reflecting the pokemons
+ colouring while giving relatively distinct colours.
 }
 \examples{
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +

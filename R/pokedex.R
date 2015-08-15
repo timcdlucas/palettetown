@@ -25,6 +25,16 @@ pokedex <- function(pokemon = NULL, spread = NULL){
     pokeNs <- c(6, 17, 114, 137, 156, 191, 193, 283, 311, 318)
   }
 
+  
+  # Fix lower case to first letter capitilised.
+  if(is.character(pokemon)){
+    s <- strsplit(pokemon, " ")[[1]]
+    pokemon <- paste(toupper(substring(s, 1,1)), 
+                     tolower(substring(s, 2)),
+        sep="", collapse=" ")
+  }
+
+
   if(is.numeric(pokemon)){
     pokeNs <- pokemon:(pokemon + 9)
   } else if(is.character(pokemon)){

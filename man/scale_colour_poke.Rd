@@ -13,6 +13,9 @@ scale_fill_poke(..., pokemon = 1, spread = NULL)
 scale_color_poke(..., pokemon = 1, spread = NULL)
 }
 \arguments{
+\item{...}{Other arguments passed on to ‘discrete_scale’ to control
+ name, limits, breaks, labels and so forth.}
+
 \item{pokemon}{An integer or character pokemon name}
 
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
@@ -28,6 +31,7 @@ If \code{spread} is given an integer, the full palette is
  colouring while giving relatively distinct colours.
 }
 \examples{
+library(ggplot2)
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
  scale_colour_poke('Metapod')
 }

@@ -6,6 +6,9 @@ Date: 12/08/2015
 Author: Tim Lucas
 Maintainer: Tim Lucas <timcdlucas@gmail.com>
 Description: Use pokemon inspired palettes in base graphics or ggplot2 graphics. Palettes are the colours in each pokemons sprite, ordered by how common they are in the image. The first 386 pokemon are curently provided.
+Suggests:
+  ggplot2,
+  magrittr
 License: MIT
-Note: Pokemon, pokedex and all pokemon names are trademarks of Nintendo.
+Copyright: Pokemon, pokedex and all pokemon names are trademarks of Nintendo.
 URL: https://github.com/timcdlucas/palettetown

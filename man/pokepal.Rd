@@ -25,4 +25,7 @@ If \code{spread} is given an integer, the full palette is
 pal <- pokepal(3)
 plot(1:length(pal), col = pal)
 }
+\seealso{
+\code{\link{ichooseyou}}
+}
 

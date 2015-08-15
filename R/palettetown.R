@@ -23,6 +23,7 @@ NULL
 #'  The most common colour in each cluster is then returned. It is
 #'  hoped this will give a good balance between reflecting the pokemons
 #'  colouring while giving relatively distinct colours.
+#'@seealso \code{\link{ichooseyou}}
 #'@examples
 #'pal <- pokepal(3)
 #'plot(1:length(pal), col = pal)
@@ -64,3 +65,30 @@ pokepal <- function(pokemon = 1, spread = NULL){
 }
 
 
+#' Get a pokemon palette. Alias for pokepal.
+#'
+#' Get a pokemon palette by either giving a pokemon number or name.
+#' The recomended syntax for this function is 
+#' 'Magikarp' \%>\% ichooseyou using the pipe operator \%>\%
+#' from the magrittr package.
+#' To specify the \code{spread} parameter use
+#' 'Snorlax' \%>\% ichooseyou(5)
+#'
+#'@inheritParams pokepal
+#'
+#'@name ichooseyou
+#'@details If \code{spread} is given an integer, the full palette is 
+#'  clustered into that many groups (ward clustering in HSV space). 
+#'  The most common colour in each cluster is then returned. It is
+#'  hoped this will give a good balance between reflecting the pokemons
+#'  colouring while giving relatively distinct colours.
+#'@seealso \code{\link{pokepal}}
+#'@examples
+#'library(magrittr)
+#'pal <- 'Hoothoot' %>% ichooseyou
+#'pal2 <- 'Pichu' %>% ichooseyou(10)
+#'
+#'@export
+
+
+ichooseyou <- pokepal

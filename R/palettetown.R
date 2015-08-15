@@ -19,7 +19,8 @@ NULL
 #'
 #'@name pokepal
 #'@details If \code{spread} is given an integer, the full palette is 
-#'  clustered into that many groups (ward clustering in HSV space). 
+#'  clustered into that many groups (ward clustering in HSV space, using
+#'  only hue and downweighted saturation). 
 #'  The most common colour in each cluster is then returned. It is
 #'  hoped this will give a good balance between reflecting the pokemons
 #'  colouring while giving relatively distinct colours.
@@ -41,12 +42,22 @@ pokepal <- function(pokemon = 1, spread = NULL){
 
   # Reorder palette if spread is numeric.
   if(is.numeric(spread)){
-    if(length(pokeColours[[pokemon]]) < spread){
+    palette <- pokeColours[[pokemon]]
+    # unless colour is very important, remove near whites.
+    if(length(palette) > 5){
+    palette <- c(palette[1:4],
+      palette[5:length(palette)][
+        rgb2hsv(col2rgb(palette[5:length(palette)]))[2,] > 0.3
+      ]
+    )
+    }
+    if(length(palette) < spread){
       stop('Not enough colours available')
     }
-    clusts <- cutree(hclust(dist( 
-      t(rgb2hsv(col2rgb(pokeColours[[pokemon]])))
-    ), method = 'ward.D'),
+    vals <- t(rgb2hsv(col2rgb(palette))[1:2,])
+    
+    vals[,2] <- vals[,2]/100
+    clusts <- cutree(hclust(dist(vals), method = 'ward.D'),
     k = spread)
     # First occurence of each cluster number in clusts
     #   is always the most common.

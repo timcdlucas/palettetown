@@ -45,11 +45,14 @@ pokepal <- function(pokemon = 1, spread = NULL){
     palette <- pokeColours[[pokemon]]
     # unless colour is very important, remove near whites.
     if(length(palette) > 5){
-    palette <- c(palette[1:4],
+    palette2 <- c(palette[1:4],
       palette[5:length(palette)][
         rgb2hsv(col2rgb(palette[5:length(palette)]))[2,] > 0.2
       ]
     )
+    if(length(palette2) > spread){
+      palette <- palette2
+    }
     }
     if(length(palette) < spread){
       stop('Not enough colours available')
@@ -97,7 +100,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
 #'@examples
 #'library(magrittr)
 #'pal <- 'Hoothoot' %>% ichooseyou
-#'pal2 <- 'Pichu' %>% ichooseyou(10)
+#'pal2 <- 'Pichu' %>% ichooseyou(6)
 #'
 #'@export
 

@@ -5,7 +5,7 @@
 #' Get a pokemon palette by either giving a pokemon number or name.
 #'
 #'@inheritParams pokepal
-#'@param ... Other arguments passed on to ‘discrete_scale’ to control
+#'@param ... Other arguments passed on to \code{discrete_scale} to control
 #'  name, limits, breaks, labels and so forth.
 #'
 #'@name scale_colour_poke
@@ -23,7 +23,7 @@
 #'@export
 
 scale_colour_poke <- function(..., pokemon = 1, spread = NULL){
-  scale_colour_manual(..., values = pokepal(pokemon, spread))
+  ggplot2::scale_colour_manual(..., values = pokepal(pokemon, spread))
 }
 
 
@@ -31,7 +31,7 @@ scale_colour_poke <- function(..., pokemon = 1, spread = NULL){
 #'@export
 
 scale_fill_poke <- function(..., pokemon = 1, spread = NULL){
-  scale_fill_manual(..., values = pokepal(pokemon, spread))
+  ggplot2::scale_fill_manual(..., values = pokepal(pokemon, spread))
 }
 
 
@@ -39,7 +39,7 @@ scale_fill_poke <- function(..., pokemon = 1, spread = NULL){
 #'@export
 
 scale_color_poke <- function(..., pokemon = 1, spread = NULL){
-  scale_color_manual(..., values = pokepal(pokemon, spread))
+  ggplot2::scale_color_manual(..., values = pokepal(pokemon, spread))
 }
 
 

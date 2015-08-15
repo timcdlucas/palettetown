@@ -9,6 +9,6 @@ Description: Use pokemon inspired palettes in base graphics or ggplot2 graphics.
 Suggests:
   ggplot2,
   magrittr
-License: MIT
+License: MIT + file LICENSE
 Copyright: Pokemon, pokedex and all pokemon names are trademarks of Nintendo.
 URL: https://github.com/timcdlucas/palettetown

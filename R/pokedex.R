@@ -35,7 +35,9 @@ pokedex <- function(pokemon = NULL, spread = NULL){
   if(is.null(spread)){
     nCols <- sapply(pokeNs, function(x) length(pokepal(x)))
   } else {
-    nCols <- rep(spread, 10)
+    nCols <- sapply(pokeNs, function(x) length(pokepal(x)))
+    nCols[nCols > spread] <- spread
+    
   }
   xlim <- max(nCols)
 
@@ -54,7 +56,7 @@ pokedex <- function(pokemon = NULL, spread = NULL){
           ybottom = 10 - i, 
           xright = 1:nCols[i], 
           ytop = 11 - i - 0.2, 
-          col = pokepal(pokeNs[i], spread),
+          col = pokepal(pokeNs[i], nCols[i]),
           border="light grey")
     }
     text(rep(-0.1, 10), (10:1) - 0.6, 

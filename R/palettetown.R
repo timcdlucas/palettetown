@@ -47,7 +47,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
     if(length(palette) > 5){
     palette <- c(palette[1:4],
       palette[5:length(palette)][
-        rgb2hsv(col2rgb(palette[5:length(palette)]))[2,] > 0.3
+        rgb2hsv(col2rgb(palette[5:length(palette)]))[2,] > 0.2
       ]
     )
     }
@@ -57,7 +57,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
     vals <- t(rgb2hsv(col2rgb(palette))[1:2,])
     
     vals[,2] <- vals[,2]/100
-    clusts <- cutree(hclust(dist(vals), method = 'ward.D'),
+    clusts <- cutree(hclust(dist(vals), method = 'ward.D2'),
     k = spread)
     # First occurence of each cluster number in clusts
     #   is always the most common.

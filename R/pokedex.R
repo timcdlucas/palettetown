@@ -51,18 +51,18 @@ pokedex <- function(pokemon = NULL, spread = NULL){
   }
   xlim <- max(nCols)
 
-  oldpar <- par(mgp = c(2, 0.25, 0), mai=c(1.02,0.82,0.82,0.42))
-  on.exit(par(oldpar))
+  oldpar <- graphics::par(mgp = c(2, 0.25, 0), mai=c(1.02,0.82,0.82,0.42))
+  on.exit(graphics::par(oldpar))
 
 
-  par(mar = c(1, 7, 1, 1))
-  plot(1,1,xlim=c(0,xlim), ylim=c(0, 10), type="n", 
+  graphics::par(mar = c(1, 7, 1, 1))
+  graphics::plot(1,1,xlim=c(0,xlim), ylim=c(0, 10), type="n", 
        axes=FALSE, bty="n", xlab="", ylab="")
 
     for(i in 1:10){
 
       
-      rect(xleft = 0:(nCols[i] - 1), 
+      graphics::rect(xleft = 0:(nCols[i] - 1), 
           ybottom = 10 - i, 
           xright = 1:nCols[i], 
           ytop = 11 - i - 0.2, 

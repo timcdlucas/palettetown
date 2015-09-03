@@ -47,7 +47,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
     if(length(palette) > 5){
     palette2 <- c(palette[1:4],
       palette[5:length(palette)][
-        rgb2hsv(col2rgb(palette[5:length(palette)]))[2,] > 0.2
+        grDevices::rgb2hsv(grDevices::col2rgb(palette[5:length(palette)]))[2,] > 0.2
       ]
     )
     if(length(palette2) > spread){
@@ -57,10 +57,10 @@ pokepal <- function(pokemon = 1, spread = NULL){
     if(length(palette) < spread){
       stop('Not enough colours available')
     }
-    vals <- t(rgb2hsv(col2rgb(palette))[1:2,])
+    vals <- t(grDevices::rgb2hsv(grDevices::col2rgb(palette))[1:2,])
     
     vals[,2] <- vals[,2]/100
-    clusts <- cutree(hclust(dist(vals), method = 'ward.D2'),
+    clusts <- stats::cutree(stats::hclust(dist(vals), method = 'ward.D2'),
     k = spread)
     # First occurence of each cluster number in clusts
     #   is always the most common.

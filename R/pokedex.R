@@ -19,6 +19,9 @@
 #'@examples
 #'pokedex()
 #'pokedex('Metapod')
+#'pokedex(5, spread = 2)
+#'pokedex(cb = 3)
+#'pokedex(cb = 2, spread = 6)
 #'@export
 
 

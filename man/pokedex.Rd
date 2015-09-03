@@ -4,12 +4,16 @@
 \alias{pokedex}
 \title{Display pokemon palettes.}
 \usage{
-pokedex(pokemon = NULL, spread = NULL)
+pokedex(pokemon = NULL, spread = NULL, cb = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
 
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
+
+\item{cb}{A number between 1 and 4 to select ten of 40 colourblind friendly
+ (Deuteranomaly) palettes. \code{pokemon} is ignored if used, but \code{spread}
+ works as normal.}
 }
 \description{
 Display 10 pokemon palettes starting from a name or number.
@@ -26,5 +30,8 @@ If \code{spread} is given an integer, the full palette is
 \examples{
 pokedex()
 pokedex('Metapod')
+pokedex(5, spread = 2)
+pokedex(cb = 3)
+pokedex(cb = 2, spread = 6)
 }
 

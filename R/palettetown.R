@@ -60,7 +60,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
     vals <- t(grDevices::rgb2hsv(grDevices::col2rgb(palette))[1:2,])
     
     vals[,2] <- vals[,2]/100
-    clusts <- stats::cutree(stats::hclust(dist(vals), method = 'ward.D2'),
+    clusts <- stats::cutree(stats::hclust(stats::dist(vals), method = 'ward.D2'),
     k = spread)
     # First occurence of each cluster number in clusts
     #   is always the most common.

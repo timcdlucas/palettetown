@@ -26,6 +26,8 @@ If \code{spread} is given an integer, the full palette is
  The most common colour in each cluster is then returned. It is
  hoped this will give a good balance between reflecting the pokemons
  colouring while giving relatively distinct colours.
+
+ Thanks to Luis Verde for the colourblind suitable selection.
 }
 \examples{
 pokedex()

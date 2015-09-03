@@ -16,6 +16,8 @@
 #'  The most common colour in each cluster is then returned. It is
 #'  hoped this will give a good balance between reflecting the pokemons
 #'  colouring while giving relatively distinct colours.
+#'
+#'  Thanks to Luis Verde for the colourblind suitable selection.
 #'@examples
 #'pokedex()
 #'pokedex('Metapod')
@@ -86,7 +88,7 @@ pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
           col = pokepal(pokeNs[i], nCols[i]),
           border="light grey")
     }
-    text(rep(-0.1, 10), (10:1) - 0.6, 
+    graphics::text(rep(-0.1, 10), (10:1) - 0.6, 
       labels = paste(pokeNs, ':', names(pokeColours)[pokeNs]), 
       xpd = TRUE, adj = 1)
 

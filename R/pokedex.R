@@ -6,6 +6,9 @@
 #' displayed.
 #'
 #'@inheritParams pokepal
+#'@param cb A number between 1 and 4 to select ten of 40 colourblind friendly 
+#'  (Deuteranomaly) palettes. \code{pokemon} is ignored if used, but \code{spread}
+#'  works as normal.
 #'
 #'@name pokedex
 #'@details If \code{spread} is given an integer, the full palette is 
@@ -19,12 +22,23 @@
 #'@export
 
 
-pokedex <- function(pokemon = NULL, spread = NULL){
+pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
 
   if(is.null(pokemon)){
     pokeNs <- c(6, 17, 114, 137, 156, 191, 193, 283, 311, 318)
   }
 
+
+  colourblindFriendly <- c(1,2,3,9,10,12,18,19,29,32,39,42,43,44,61,
+    63,65,66,69,72,73,101,109,107,109,110,116,126,128,130,131,134,
+    135,136,140,141,149,150,156,157)
+
+  if(is.numeric(cb)){
+    if(cb > 4) stop('cb must be between 1 and 4')
+    pokemon <- NULL
+    pokeNs <- colourblindFriendly[((cb - 1) * 10 + 1):((cb - 1) * 10 + 10)]
+  }
+    
   
   # Fix lower case to first letter capitilised.
   if(is.character(pokemon)){
@@ -34,7 +48,7 @@ pokedex <- function(pokemon = NULL, spread = NULL){
         sep="", collapse=" ")
   }
 
-
+  
   if(is.numeric(pokemon)){
     pokeNs <- pokemon:(pokemon + 9)
   } else if(is.character(pokemon)){

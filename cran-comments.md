@@ -1,3 +1,8 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* 
+
 ## Test environments
 * ubuntu 14.04, R 3.2.2
 * ubuntu 14.04, R-devel 2015-08-28 r69202

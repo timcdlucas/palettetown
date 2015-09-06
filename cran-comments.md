@@ -1,9 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Changed the fate field in DESCRIPTION to ISO 8601 format.
-
-* Changed the LICENSE file to just the CRAN template.
+* Filled in name and date in LICENSE
 
 ## Test environments
 * ubuntu 14.04, R 3.2.2

@@ -1,7 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Filled in name and date in LICENSE
+* Used only the two lines in MIT template. I have followed the example in the plotly package.
 
 ## Test environments
 * ubuntu 14.04, R 3.2.2

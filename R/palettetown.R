@@ -12,7 +12,7 @@ NULL
 
 #' Get a pokemon palette.
 #'
-#' Get a pokemon palette by either giving a pokemon number or name.
+#' Get a pokemon (R) palette by either giving a pokemon number or name.
 #'
 #'@param pokemon An integer or character pokemon name
 #'@param spread How many, quite distinct, colours should be returned. See details.

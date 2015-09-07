@@ -3,7 +3,7 @@
 #'
 #' Display 10 pokemon palettes starting from a name or number.
 #' If no name or number is given, 10 of the better palettes are
-#' displayed.
+#' displayed. Pokedex is a Trademark of Nintendo.
 #'
 #'@inheritParams pokepal
 #'@param cb A number between 1 and 4 to select ten of 40 colourblind friendly 

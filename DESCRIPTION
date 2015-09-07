@@ -5,7 +5,7 @@ Version: 0.1.0
 Date: 2015-09-04
 Author: Tim Lucas
 Maintainer: Tim Lucas <timcdlucas@gmail.com>
-Description: Use pokemon inspired palettes with additional 'ggplot2' scales. Palettes are the colours in each Pokemon's sprite, ordered by how common they are in the image. The first 386 pokemon are currently provided.
+Description: Use pokemon(R) inspired palettes with additional 'ggplot2' scales. Palettes are the colours in each Pokemon's sprite, ordered by how common they are in the image. The first 386 pokemon are currently provided.
 Suggests:
   ggplot2,
   magrittr

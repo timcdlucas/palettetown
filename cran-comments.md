@@ -1,7 +1,9 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Used only the two lines in MIT template. I have followed the example in the plotly package.
+* Edited the Description field in DESCRIPTION to better reflect the use of ggplot2 and base graphics.
+* Added trademark information in Description field in DESCRIPTION
+* Added trademark information in Docs.
 
 ## Test environments
 * ubuntu 14.04, R 3.2.2

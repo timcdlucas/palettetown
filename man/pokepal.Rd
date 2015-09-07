@@ -12,7 +12,7 @@ pokepal(pokemon = 1, spread = NULL)
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
 }
 \description{
-Get a pokemon palette by either giving a pokemon number or name.
+Get a pokemon (R) palette by either giving a pokemon number or name.
 }
 \details{
 If \code{spread} is given an integer, the full palette is

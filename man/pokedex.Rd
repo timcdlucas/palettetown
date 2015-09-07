@@ -18,7 +18,7 @@ pokedex(pokemon = NULL, spread = NULL, cb = NULL)
 \description{
 Display 10 pokemon palettes starting from a name or number.
 If no name or number is given, 10 of the better palettes are
-displayed.
+displayed. Pokedex is a Trademark of Nintendo.
 }
 \details{
 If \code{spread} is given an integer, the full palette is

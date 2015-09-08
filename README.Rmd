@@ -1,0 +1,69 @@
+palettetown
+======
+
+
+An R package providing pokemon colour palettes.
+
+This package is very much inspired by [pokepalletes](http://pokepalettes.com/#charizard).
+
+Note that Pokemon, pokedex and all pokemon names are trademarks of Nintendo. I own nothing.
+
+
+
+Installation
+-------------
+
+```{r install, echo = TRUE, eval = FALSE}
+library(devtools)
+install_github('timcdlucas/palettetown')
+library(encounteR)
+```
+
+Usage
+------
+
+### See palettes
+
+```{r lib, eval = TRUE, echo = FALSE}
+library(palettetown)
+```
+
+```{r pokedex, eval = TRUE, echo = TRUE}
+# Show ten of the better palettes
+pokedex()
+
+# Show ten palettes starting from pokemon #155
+# Get 7 fairly distinct colours for each.
+pokedex(155, 7)
+
+# Show ten palettes starting from Metapod
+pokedex('Metapod')
+
+```
+
+
+### Base graphics
+
+```{r base}
+plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16)
+```
+
+### ggplot2
+```{r ggplot2}
+# palettetown doesn't import ggplot2
+library(ggplot2)
+
+
+qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris) +
+  scale_colour_poke(pokemon = 318)
+
+qplot(factor(carb), data=mtcars, geom="bar", 
+  fill = factor(carb)) +
+  scale_fill_poke(pokemon = 'Sunkern', spread = 6)
+```
+
+
+
+
+
+

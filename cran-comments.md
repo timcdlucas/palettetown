@@ -1,9 +1,7 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
-* Edited the Description field in DESCRIPTION to better reflect the use of ggplot2 and base graphics.
-* Added trademark information in Description field in DESCRIPTION
-* Added trademark information in Docs.
+*Changed the case of license to LICENSE.
 
 ## Test environments
 * ubuntu 14.04, R 3.2.2
@@ -13,7 +11,7 @@ This is a resubmission. In this version I have:
 
 ## R CMD check results
 
-There were no warnings or notes.
+There was 
 
 ## Copyright 
 
@@ -21,4 +19,4 @@ The words Pokemon, pokedex and all the pokemon names (which are include in data 
 
 I have made this clear in the DESCRIPTION file. I have read and complied with the CRAN policies. 
 
-However, I thought I would explicitely mention this here just in case there is a requirement I have not understood.
+However, I thought I would explicitly mention this here just in case there is a requirement I have not understood.

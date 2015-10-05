@@ -80,12 +80,17 @@ pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
 
     for(i in 1:10){
 
-      
+      if(is.null(spread)){
+        nColours <- NULL
+      } else {
+        nColours <- nCols[i]
+      }      
+
       graphics::rect(xleft = 0:(nCols[i] - 1), 
           ybottom = 10 - i, 
           xright = 1:nCols[i], 
           ytop = 11 - i - 0.2, 
-          col = pokepal(pokeNs[i], nCols[i]),
+          col = pokepal(pokeNs[i], nColours),
           border="light grey")
     }
     graphics::text(rep(-0.1, 10), (10:1) - 0.6, 

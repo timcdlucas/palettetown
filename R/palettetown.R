@@ -34,10 +34,7 @@ pokepal <- function(pokemon = 1, spread = NULL){
     
   # Fix lower case to first letter capitilised.
   if(is.character(pokemon)){
-    s <- strsplit(pokemon, " ")[[1]]
-    pokemon <- paste(toupper(substring(s, 1,1)), 
-                     tolower(substring(s, 2)),
-        sep="", collapse=" ")
+    pokemon <- tolower(pokemon)
   }
 
   # Reorder palette if spread is numeric.

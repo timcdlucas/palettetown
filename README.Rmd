@@ -1,6 +1,9 @@
+
+
 palettetown
 ======
 
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/palettetown)](http://cranlogs.r-pkg.org/badges/grand-total/palettetown/index.html)
 
 An R package providing pokemon colour palettes.
 

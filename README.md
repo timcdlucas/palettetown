@@ -1,6 +1,9 @@
+
+
 palettetown
 ======
 
+[![Total Downloads](http://cranlogs.r-pkg.org/badges/grand-total/palettetown)](http://cranlogs.r-pkg.org/badges/grand-total/palettetown/index.html)
 
 An R package providing pokemon colour palettes.
 
@@ -80,8 +83,13 @@ plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16, c
 ```r
 # palettetown doesn't import ggplot2
 library(ggplot2)
+```
 
+```
+## Loading required package: methods
+```
 
+```r
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris, size = 2) +
   scale_colour_poke(pokemon = 156, spread = 3)
 ```

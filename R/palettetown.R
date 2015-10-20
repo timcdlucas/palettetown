@@ -24,6 +24,11 @@ NULL
 #'  The most common colour in each cluster is then returned. It is
 #'  hoped this will give a good balance between reflecting the pokemons
 #'  colouring while giving relatively distinct colours.
+#'
+#'  A few pokemon have odd names. Argument \code{pokemon} ignores letter case.
+#'  Female and Male Nidoran are named NidoranF and NidoranM respectively.
+#'  Mr. Mime should be either 'Mr. Mime' or 'mr. mime'. The full stop and space
+#'  are needed.
 #'@seealso \code{\link{ichooseyou}}
 #'@examples
 #'pal <- pokepal(3)

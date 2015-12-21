@@ -88,7 +88,7 @@ library(ggplot2)
 
 
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris, size = 2) +
-  scale_colour_poke(pokemon = 156, spread = 3)
+  scale_colour_poke(pokemon = 'Tangela', spread = 3)
 ```
 
 ![plot of chunk ggplot2](figure/ggplot2-1.png) 

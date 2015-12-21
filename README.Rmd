@@ -37,9 +37,11 @@ Usage
 ```{r lib, eval = TRUE, echo = FALSE}
 library(palettetown)
 set.seed(10)
+
+imgSize = 6
 ```
 
-```{r pokedex, eval = TRUE, echo = TRUE, dpi = 200, fig.width = 5, fig.height = 5}
+```{r pokedex, eval = TRUE, echo = TRUE, dpi = 200, fig.width = imgSize, fig.height = imgSize}
 # Show ten of the better palettes
 pokedex()
 
@@ -58,18 +60,18 @@ pokedex(cb = 1)
 
 ### Base graphics
 
-```{r base, dpi = 200, fig.width = 5, fig.height = 5}
+```{r base, dpi = 200, fig.width = imgSize, fig.height = imgSize-1}
 plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16, cex = 1.8)
 ```
 
 ### ggplot2
-```{r ggplot2, dpi = 200, fig.width = 5, fig.height = 5}
+```{r ggplot2, dpi = 200, fig.width = imgSize, fig.height = imgSize-1}
 # palettetown doesn't import ggplot2
 library(ggplot2)
 
 
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris, size = 2) +
-  scale_colour_poke(pokemon = 156, spread = 3)
+  scale_colour_poke(pokemon = 'Tangela', spread = 3)
 
 qplot(factor(carb), data=mtcars, geom="bar", 
   fill = factor(carb)) +

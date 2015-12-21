@@ -34,12 +34,12 @@ Usage
 
 ### See palettes
 
-```{r lib, eval = TRUE, echo = FALSE, dpi = 100}
+```{r lib, eval = TRUE, echo = FALSE}
 library(palettetown)
 set.seed(10)
 ```
 
-```{r pokedex, eval = TRUE, echo = TRUE}
+```{r pokedex, eval = TRUE, echo = TRUE, dpi = 200, fig.width = 5, fig.height = 5}
 # Show ten of the better palettes
 pokedex()
 
@@ -58,12 +58,12 @@ pokedex(cb = 1)
 
 ### Base graphics
 
-```{r base, dpi = 100}
+```{r base, dpi = 200, fig.width = 5, fig.height = 5}
 plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16, cex = 1.8)
 ```
 
 ### ggplot2
-```{r ggplot2, dpi = 100}
+```{r ggplot2, dpi = 200, fig.width = 5, fig.height = 5}
 # palettetown doesn't import ggplot2
 library(ggplot2)
 

@@ -59,14 +59,16 @@ pokedex(155, 7)
 pokedex('Metapod')
 ```
 
-![plot of chunk pokedex](figure/pokedex-3.png) 
+```
+## Error in start:(start + 9): argument of length 0
+```
 
 ```r
 # Show ten palettes that are fairly colour blind friendly
 pokedex(cb = 1)
 ```
 
-![plot of chunk pokedex](figure/pokedex-4.png) 
+![plot of chunk pokedex](figure/pokedex-3.png) 
 
 
 ### Base graphics
@@ -83,13 +85,8 @@ plot(rnorm(20), rnorm(20), col = pokepal(pokemon = 137, spread = 6), pch = 16, c
 ```r
 # palettetown doesn't import ggplot2
 library(ggplot2)
-```
 
-```
-## Loading required package: methods
-```
 
-```r
 qplot(Sepal.Length, Sepal.Width, colour = Species, data=iris, size = 2) +
   scale_colour_poke(pokemon = 156, spread = 3)
 ```

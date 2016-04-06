@@ -45,12 +45,9 @@ pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
   }
     
   
-  # Fix lower case to first letter capitilised.
+  # ensure lower case.
   if(is.character(pokemon)){
-    s <- strsplit(pokemon, " ")[[1]]
-    pokemon <- paste(toupper(substring(s, 1,1)), 
-                     tolower(substring(s, 2)),
-        sep="", collapse=" ")
+    pokemon <- tolower(pokemon)
   }
 
   

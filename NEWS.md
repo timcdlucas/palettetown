@@ -9,4 +9,7 @@ Released on CRAN.
 
 
 
-## v0.1.0.9000
+## v0.1.0.9001
+
+* Small bug fixes.
+* Pokedex displayed colours in different order to pokepal.

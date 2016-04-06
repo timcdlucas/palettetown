@@ -79,6 +79,12 @@ qplot(factor(carb), data=mtcars, geom="bar",
 ```
 
 
+Real World Uses
+----------------
+
+Just for fun and for my ego, I'll add real world uses or palettetown here.
+[http://luisdva.github.io](http://luisdva.github.io/Paper-section-lengths/)
+
 
 
 

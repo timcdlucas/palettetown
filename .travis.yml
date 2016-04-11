@@ -1,0 +1,6 @@
+# Continuous integration with travis
+language: r
+
+
+# cache packages to speed up builds
+cache: packages

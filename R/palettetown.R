@@ -40,6 +40,20 @@ pokepal <- function(pokemon = 1, spread = NULL){
   # Fix lower case to first letter capitilised.
   if(is.character(pokemon)){
     pokemon <- tolower(pokemon)
+
+    # Check that pokemon exists
+    if(!pokemon %in% names(pokeColours)){
+      message('That pokemon is not available')
+      closeMatch <- names(pokeColours)[agrep(pokemon, names(pokeColours))]
+      if(length(closeMatch) > 1){
+        message(paste('Did you mean', closeMatch[1], '?'))
+      }
+      stop()
+    }
+  }
+
+  if(is.numeric(pokemon) & pokemon > length(pokeColours)){
+    stop(paste('Pokemon number too high. First', length(pokeColours), 'pokemon are available.'))
   }
 
   # Reorder palette if spread is numeric.

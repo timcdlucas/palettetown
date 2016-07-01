@@ -9,9 +9,14 @@
 #'@param cb A number between 1 and 4 to select ten of 40 colourblind friendly 
 #'  (Deuteranomaly) palettes. \code{pokemon} is ignored if used, but \code{spread}
 #'  works as normal.
+#'@param extra f an integer, show the extra palettes starting from that number
 #'
 #'@name pokedex
-#'@details If \code{spread} is given an integer, the full palette is 
+#'@details Many of the pure pokemon palettes are not great. I have manually created
+#'  a few "extra" palettes (e.g., teamrocket). 
+#'  These might be easier to use.
+#'
+#'  If \code{spread} is given an integer, the full palette is 
 #'  clustered into that many groups (ward clustering in HSV space). 
 #'  The most common colour in each cluster is then returned. It is
 #'  hoped this will give a good balance between reflecting the pokemons
@@ -27,12 +32,15 @@
 #'@export
 
 
-pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
+pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL, extra = NULL){
 
   if(is.null(pokemon)){
     pokeNs <- c(6, 17, 114, 137, 156, 191, 193, 283, 311, 318)
   }
 
+  if(sum(!is.null(extra), !is.null(pokemon), !is.null(cb)) > 1){
+    stop('Only one of `pokemon`, `cb` and `extra` can be not NULL.')
+  }
 
   colourblindFriendly <- c(1,2,3,9,10,12,18,19,29,32,39,42,43,44,61,
     63,65,66,69,72,73,101,109,107,109,110,116,126,128,130,131,134,
@@ -42,6 +50,14 @@ pokedex <- function(pokemon = NULL, spread = NULL, cb = NULL){
     if(cb > 4) stop('cb must be between 1 and 4')
     pokemon <- NULL
     pokeNs <- colourblindFriendly[((cb - 1) * 10 + 1):((cb - 1) * 10 + 10)]
+  }
+
+  if(is.numeric(extra)){
+    if(extra + 386 + 9 > length(pokeColours)){
+      pokeNs <- c((extra + 386) : length(pokeColours), 1 : (10 - length((extra + 386) : length(pokeColours))))
+    } else {
+      pokeNs <- (extra + 386) : (extra + 386 + 9)
+    }
   }
     
   

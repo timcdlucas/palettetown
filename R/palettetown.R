@@ -16,9 +16,14 @@ NULL
 #'
 #'@param pokemon An integer or character pokemon name
 #'@param spread How many, quite distinct, colours should be returned. See details.
+#'@param extra If an integer, select one of the extra palette (i.e. not based on individual pokemon)
 #'
 #'@name pokepal
-#'@details If \code{spread} is given an integer, the full palette is 
+#'@details Many of the pure pokemon palettes are not great. I have manually created
+#'  a few "extra" palettes (e.g., teamrocket). 
+#'  These might be easier to use.
+#'  
+#'  If \code{spread} is given an integer, the full palette is 
 #'  clustered into that many groups (ward clustering in HSV space, using
 #'  only hue and downweighted saturation). 
 #'  The most common colour in each cluster is then returned. It is
@@ -35,7 +40,7 @@ NULL
 #'plot(1:length(pal), col = pal)
 #'@export
 
-pokepal <- function(pokemon = 1, spread = NULL){
+pokepal <- function(pokemon = 1, spread = NULL, extra = NULL){
     
   # Fix lower case to first letter capitilised.
   if(is.character(pokemon)){
@@ -56,8 +61,16 @@ pokepal <- function(pokemon = 1, spread = NULL){
     stop(paste('Pokemon number too high. First', length(pokeColours), 'pokemon are available.'))
   }
 
-  # Reorder palette if spread is numeric.
-  if(is.numeric(spread)){
+  if(!is.null(extra)){
+    if(!is.numeric(extra)) stop('Extra must be NULL or an integer')
+    if(extra + 386 > length(pokeColours)){
+      stop(paste('Extra too high. There are', length(pokeColours) - 386, 'extra palettes.'))
+    }
+
+
+  if(!is.null(extra)){
+    pal <- pokeColours[[extra + 386]]
+  } else if(is.numeric(spread)){   # Reorder palette if spread is numeric.
     palette <- pokeColours[[pokemon]]
     # unless colour is very important, remove near whites.
     if(length(palette) > 5){

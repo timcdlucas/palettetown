@@ -4,18 +4,24 @@
 \alias{pokepal}
 \title{Get a pokemon palette.}
 \usage{
-pokepal(pokemon = 1, spread = NULL)
+pokepal(pokemon = 1, spread = NULL, extra = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
 
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
+
+\item{extra}{If an integer, select one of the extra palette (i.e. not based on individual pokemon)}
 }
 \description{
 Get a pokemon (R) palette by either giving a pokemon number or name.
 }
 \details{
-If \code{spread} is given an integer, the full palette is 
+Many of the pure pokemon palettes are not great. I have manually created
+ a few "extra" palettes (e.g., teamrocket). 
+ These might be easier to use.
+ 
+ If \code{spread} is given an integer, the full palette is 
  clustered into that many groups (ward clustering in HSV space, using
  only hue and downweighted saturation). 
  The most common colour in each cluster is then returned. It is

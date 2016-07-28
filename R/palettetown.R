@@ -66,6 +66,7 @@ pokepal <- function(pokemon = 1, spread = NULL, extra = NULL){
     if(extra + 386 > length(pokeColours)){
       stop(paste('Extra too high. There are', length(pokeColours) - 386, 'extra palettes.'))
     }
+  }
 
 
   if(!is.null(extra)){

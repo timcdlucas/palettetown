@@ -2,11 +2,14 @@
 
 #' Combine colours from different pokemon.
 #' 
+#' 
+#' 
 #'@param pokemon A vector of integers or a character vector of pokemon name
 #'@param n How many colours per pokemon?
 #'@param spread How many, fairly distinct, colours should be returned for each pokemon. 
 #'  If not null, \code{n} is ignored.
-#'@export 
+#'@export
+#'@name team 
 
 team <- function(pokemon, n = 1, spread = NULL){
   

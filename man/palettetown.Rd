@@ -11,4 +11,3 @@ Pokemon inspired colour palettes.
 \author{
 Tim CD Lucas
 }
-

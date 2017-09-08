@@ -16,7 +16,7 @@ NULL
 #'
 #'@param pokemon An integer or character pokemon name
 #'@param spread How many, quite distinct, colours should be returned. See details.
-#'@param extra If an integer, select one of the extra palette (i.e. not based on individual pokemon)
+#'@param extra If an integer, select one of the extra palettes (i.e. not based on individual pokemon)
 #'
 #'@name pokepal
 #'@details Many of the pure pokemon palettes are not great. I have manually created

@@ -11,7 +11,7 @@ pokepal(pokemon = 1, spread = NULL, extra = NULL)
 
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
 
-\item{extra}{If an integer, select one of the extra palette (i.e. not based on individual pokemon)}
+\item{extra}{If an integer, select one of the extra palettes (i.e. not based on individual pokemon)}
 }
 \description{
 Get a pokemon (R) palette by either giving a pokemon number or name.
@@ -40,4 +40,3 @@ plot(1:length(pal), col = pal)
 \seealso{
 \code{\link{ichooseyou}}
 }
-

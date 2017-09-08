@@ -3,3 +3,5 @@ figure/*
 README.md
 README.Rmd
 NEWS.md
+R/extraPals.R
+.travis.yml

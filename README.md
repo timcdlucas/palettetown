@@ -8,7 +8,7 @@ palettetown
 
 An R package providing pokemon colour palettes.
 
-This package is very much inspired by [pokepalletes](http://pokepalettes.com/#charizard).
+This package is very much inspired by [pokepalettes](http://pokepalettes.com/#charizard).
 
 Note that Pokemon, pokedex and all pokemon names are trademarks of Nintendo. I own nothing.
 

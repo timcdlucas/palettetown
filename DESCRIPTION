@@ -1,7 +1,7 @@
 Package: palettetown
 Type: Package
 Title: Use Pokemon Inspired Colour Palettes
-Version: 0.1.1
+Version: 0.1.1.90000
 Date: 2016-04-06
 Author: Tim Lucas
 Maintainer: Tim Lucas <timcdlucas@gmail.com>
@@ -18,4 +18,4 @@ Imports:
 License: MIT + file LICENSE
 Copyright: Pokemon, pokedex and all pokemon names are trademarks of Nintendo.
 URL: https://github.com/timcdlucas/palettetown
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

@@ -4,12 +4,14 @@
 \alias{ichooseyou}
 \title{Get a pokemon palette. Alias for pokepal.}
 \usage{
-ichooseyou(pokemon = 1, spread = NULL)
+ichooseyou(pokemon = 1, spread = NULL, extra = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
 
 \item{spread}{How many, quite distinct, colours should be returned. See details.}
+
+\item{extra}{If an integer, select one of the extra palettes (i.e. not based on individual pokemon)}
 }
 \description{
 Get a pokemon palette by either giving a pokemon number or name.
@@ -35,4 +37,3 @@ pal2 <- 'Pichu' \%>\% ichooseyou(6)
 \seealso{
 \code{\link{pokepal}}
 }
-

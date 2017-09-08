@@ -4,7 +4,7 @@
 \alias{pokedex}
 \title{Display pokemon palettes.}
 \usage{
-pokedex(pokemon = NULL, spread = NULL, cb = NULL)
+pokedex(pokemon = NULL, spread = NULL, cb = NULL, extra = NULL)
 }
 \arguments{
 \item{pokemon}{An integer or character pokemon name}
@@ -14,6 +14,8 @@ pokedex(pokemon = NULL, spread = NULL, cb = NULL)
 \item{cb}{A number between 1 and 4 to select ten of 40 colourblind friendly 
 (Deuteranomaly) palettes. \code{pokemon} is ignored if used, but \code{spread}
 works as normal.}
+
+\item{extra}{f an integer, show the extra palettes starting from that number}
 }
 \description{
 Display 10 pokemon palettes starting from a name or number.
@@ -21,7 +23,11 @@ If no name or number is given, 10 of the better palettes are
 displayed. Pokedex is a Trademark of Nintendo.
 }
 \details{
-If \code{spread} is given an integer, the full palette is 
+Many of the pure pokemon palettes are not great. I have manually created
+ a few "extra" palettes (e.g., teamrocket). 
+ These might be easier to use.
+
+ If \code{spread} is given an integer, the full palette is 
  clustered into that many groups (ward clustering in HSV space). 
  The most common colour in each cluster is then returned. It is
  hoped this will give a good balance between reflecting the pokemons
@@ -36,4 +42,3 @@ pokedex(5, spread = 2)
 pokedex(cb = 3)
 pokedex(cb = 2, spread = 6)
 }
-
